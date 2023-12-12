@@ -19,10 +19,18 @@ jobs:
         with:
           args: "-v --project-dir ."
 
-      - name: Now, install ansible and lint via pip
+      # - name: Install ansible-lint from system packages
+      #   run: |
+      #     sudo apt update
+      #     sudo apt install ansible-core ansible-lint
+
+      - name: Install ansible-lint with pip
         run: |
           sudo apt update
-          sudo apt install ansible-core ansible-lint
+          sudo apt install pip git
+          pip install ansible-core ansible-lint
 
-      - name: And run ansible-lint on our repo
-        run: ansible-lint -v --project-dir . -s
+      - name: Run ansible-lint on our repo
+        run: |
+          ansible-galaxy collection install -r requirements.yml
+          ansible-lint -v -s --project-dir .
