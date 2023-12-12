@@ -14,15 +14,8 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
-      - name: Install Ansible core
-        run: sudo apt-get install -y ansible-core
-
-      - name: Symlink collections into place
-        run: |
-          ln -s /opt/pipx/venvs/ansible-core/lib/python3.10/site-packages/ansible_collections/ /home/runner/.ansible/collections/
-
       # current: 6.22.1, working: v6.11.0 (?)
       - name: Run ansible-lint
-        uses: ansible/ansible-lint@v6.22.1
+        uses: ansible/ansible-lint@v6.11.0
         with:
           args: "-v"
