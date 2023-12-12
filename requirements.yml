@@ -1,0 +1,5 @@
+# really must be copied to the root for ansible-lint to find it
+collections:
+  - name: community.aws
+    version: ">=7.0.0"
+    source: https://galaxy.ansible.com

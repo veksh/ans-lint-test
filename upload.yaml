@@ -1,0 +1,23 @@
+- name: Upload files to s3 bucket
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+    bucket_name: "some-random-bucket"
+    region: "eu-west-2"
+    data_path: "."
+
+  tasks:
+
+    - name: Upload data to S3
+      community.aws.s3_sync:
+        region: "{{ region }}"
+        bucket: "{{ bucket_name }}"
+        file_root: "{{ data_path }}"
+        delete: true
+      register: upload_result
+
+    - name: Print results
+      ansible.builtin.debug:
+        var: upload_result
