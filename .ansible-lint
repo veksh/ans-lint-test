@@ -1,0 +1,5 @@
+---
+# .ansible-lint with explicit "offline: false", makes no difference
+
+profile: production
+offline: false
