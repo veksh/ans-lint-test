@@ -16,6 +16,8 @@
         bucket: "{{ bucket_name }}"
         file_root: "{{ data_path }}"
         delete: true
+        # will not be detected
+        deliberately_broken: true
       register: upload_result
 
     - name: Print results
