@@ -1,2 +1,2 @@
 # ans-lint-test
-test for ansible-lint action
+Just a small test case for ansible-lint action failing to install dependencies
