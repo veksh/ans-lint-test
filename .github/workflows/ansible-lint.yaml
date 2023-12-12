@@ -18,7 +18,7 @@ jobs:
         run: sudo apt-get install -y ansible
 
       - name: Install Ansible-Galaxy Requirements
-        run: ansible-galaxy install -r requirements.yaml
+        run: ansible-galaxy install -r requirements.yml
 
       - name: Run ansible-lint
         uses: ansible/ansible-lint@v6.22.1
