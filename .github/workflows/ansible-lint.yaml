@@ -19,7 +19,6 @@ jobs:
 
       - name: Symlink collections into place
         run: |
-          rm /home/runner/.ansible/collections/ansible_collections/
           ln -s /opt/pipx/venvs/ansible-core/lib/python3.10/site-packages/ansible_collections/ /home/runner/.ansible/collections/
 
       # current: 6.22.1, working: v6.11.0 (?)
