@@ -18,3 +18,11 @@ jobs:
         uses: ansible/ansible-lint@v6
         with:
           args: "-v"
+
+      - name: Now, install ansible and lint via pip
+        run: |
+          sudo apt update
+          sudo apt install ansible-core ansible-lint
+
+      - name: And run ansible-lint on our repo
+        run: ansible-lint --project-dir . -s
