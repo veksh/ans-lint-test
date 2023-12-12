@@ -14,7 +14,16 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
+      - name: Install Ansible
+        run: sudo apt-get install -y ansible
+
+      - name: Install Ansible-Galaxy Requirements
+        run: ansible-galaxy install -r requirements.yaml
+
       - name: Run ansible-lint
         uses: ansible/ansible-lint@v6.22.1
         with:
           args: "-v"
+
+      - name: List files in collections dir
+        run: ls -l /home/runner/.ansible/collections
