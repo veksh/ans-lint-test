@@ -1,0 +1,10 @@
+---
+name: ans-lit-test
+namespace: test
+version: 0.0.0 # noqa: galaxy[version-incorrect]
+authors: [me]
+readme: README.md
+description: "dependencies check"
+dependencies:
+  community.aws: ">=7.0.0"
+repository: https://github.com/veksh/ans-lint-test
